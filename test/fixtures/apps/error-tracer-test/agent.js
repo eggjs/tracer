@@ -9,7 +9,6 @@ module.exports = agent => {
     agentBeforeReadyTracers.push(agent.tracer);
     agentBeforeReadyTracers.push(agent.tracer);
     agentBeforeReadyTracers.push(agent.tracer);
-
   } catch (e) {
     agent.coreLogger.warn(e);
   }
