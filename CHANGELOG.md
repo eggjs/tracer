@@ -1,5 +1,41 @@
 # Changelog
 
+## [3.0.0](https://github.com/eggjs/egg-tracer/compare/v2.1.0...v3.0.0) (2025-02-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* drop Node.js < 18.19.0 support
+
+part of https://github.com/eggjs/egg/issues/3644
+
+https://github.com/eggjs/egg/issues/5257
+
+
+<!-- This is an auto-generated comment: release notes by coderabbit.ai
+-->
+
+## Summary by CodeRabbit
+
+- **New Features**
+- Introduced a robust tracer functionality that generates unique trace
+IDs for improved application tracing.
+- **Documentation**
+- Rebranded the package to "@eggjs/tracer" with updated installation
+instructions, usage examples, and a new contributors section.
+- **Refactor**
+- Streamlined internal architecture and module integration for enhanced
+performance and clearer TypeScript support.
+- **Chores**
+- Revamped dependency management and build workflows, ensuring
+compatibility with Node.js ≥ 18.19.0.
+
+<!-- end of auto-generated comment: release notes by coderabbit.ai -->
+
+### Features
+
+* support cjs and esm both by tshy ([#9](https://github.com/eggjs/egg-tracer/issues/9)) ([dba5b9c](https://github.com/eggjs/egg-tracer/commit/dba5b9cce4becbd81a73466e9b22dc0dbb64450a))
+
 ## [2.1.0](https://github.com/eggjs/egg-tracer/compare/v2.0.0...v2.1.0) (2023-05-24)
 
 
