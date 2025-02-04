@@ -24,12 +24,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eggjs/egg-tracer.git"
+    "url": "git+https://github.com/eggjs/tracer.git"
   },
   "bugs": {
     "url": "https://github.com/eggjs/egg/issues"
   },
-  "homepage": "https://github.com/eggjs/egg-tracer#readme",
+  "homepage": "https://github.com/eggjs/tracer#readme",
   "author": "fengmk2 <fengmk2@gmail.com> (https://github.com/fengmk2)",
   "license": "MIT",
   "engines": {
