@@ -1,25 +1,28 @@
-# egg-tracer
+# @eggjs/tracer
 
 [![NPM version][npm-image]][npm-url]
 [![Test coverage][codecov-image]][codecov-url]
 [![Known Vulnerabilities][snyk-image]][snyk-url]
 [![npm download][download-image]][download-url]
+[![Node.js Version](https://img.shields.io/node/v/@eggjs/tracer.svg?style=flat)](https://nodejs.org/en/download/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com)
+![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/eggjs/security)
 
-[npm-image]: https://img.shields.io/npm/v/egg-tracer.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/egg-tracer
-[codecov-image]: https://img.shields.io/codecov/c/github/eggjs/egg-tracer.svg?style=flat-square
-[codecov-url]: https://codecov.io/github/eggjs/egg-tracer?branch=master
-[snyk-image]: https://snyk.io/test/npm/egg-tracer/badge.svg?style=flat-square
-[snyk-url]: https://snyk.io/test/npm/egg-tracer
-[download-image]: https://img.shields.io/npm/dm/egg-tracelog.svg?style=flat-square
-[download-url]: https://npmjs.org/package/egg-tracer
+[npm-image]: https://img.shields.io/npm/v/@eggjs/tracer.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/@eggjs/tracer
+[codecov-image]: https://img.shields.io/codecov/c/github/eggjs/tracer.svg?style=flat-square
+[codecov-url]: https://codecov.io/github/eggjs/tracer?branch=master
+[snyk-image]: https://snyk.io/test/npm/@eggjs/tracer/badge.svg?style=flat-square
+[snyk-url]: https://snyk.io/test/npm/@eggjs/tracer
+[download-image]: https://img.shields.io/npm/dm/@eggjs/tracer.svg?style=flat-square
+[download-url]: https://npmjs.org/package/@eggjs/tracer
 
 tracer plugin for egg.
 
 ## Install
 
 ```bash
-npm i egg-tracer
+npm i @eggjs/tracer
 ```
 
 ## Usage
@@ -30,7 +33,7 @@ Enable tracer plugin:
 // config/plugin.js
 exports.tracer = {
   enable: true,
-  package: 'egg-tracer',
+  package: '@eggjs/tracer',
 };
 ```
 
@@ -38,7 +41,7 @@ exports.tracer = {
 
 ```js
 // my_tracer.js
-const Tracer = require('egg-tracer');
+const { Tracer } = require('@eggjs/tracer');
 
 const counter = 0;
 
@@ -66,3 +69,9 @@ Please open an issue [here](https://github.com/eggjs/egg/issues).
 ## License
 
 [MIT](LICENSE)
+
+## Contributors
+
+[![Contributors](https://contrib.rocks/image?repo=eggjs/tracer)](https://github.com/eggjs/tracer/graphs/contributors)
+
+Made with [contributors-img](https://contrib.rocks).

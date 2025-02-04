@@ -1,21 +1,18 @@
 {
-  "name": "egg-tracer",
+  "name": "@eggjs/tracer",
   "version": "2.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "tracer for egg",
   "eggPlugin": {
-    "name": "tracer"
+    "name": "tracer",
+    "exports": {
+      "import": "./dist/esm",
+      "require": "./dist/commonjs",
+      "typescript": "./src"
+    }
   },
-  "main": "lib/tracer.js",
-  "types": "index.d.ts",
-  "files": [
-    "lib",
-    "app",
-    "config",
-    "agent.js",
-    "index.js",
-    "app.js",
-    "index.d.ts"
-  ],
   "keywords": [
     "egg",
     "egg-plugin",
@@ -25,26 +22,6 @@
     "spanId",
     "parentSpanId"
   ],
-  "dependencies": {},
-  "devDependencies": {
-    "egg": "^3.16.0",
-    "egg-bin": "^6.4.0",
-    "egg-mock": "^5.10.6",
-    "eslint": "^8.41.0",
-    "eslint-config-egg": "^12.2.1",
-    "tsd": "^0.28.1"
-  },
-  "engines": {
-    "node": ">=14.0.0"
-  },
-  "scripts": {
-    "test": "npm run lint -- --fix && npm run test-local",
-    "test-local": "egg-bin test",
-    "cov": "egg-bin cov",
-    "tsd": "tsd",
-    "lint": "eslint . && npm run tsd",
-    "ci": " npm run lint && npm run cov"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/eggjs/egg-tracer.git"
@@ -54,5 +31,68 @@
   },
   "homepage": "https://github.com/eggjs/egg-tracer#readme",
   "author": "fengmk2 <fengmk2@gmail.com> (https://github.com/fengmk2)",
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node": ">= 18.19.0"
+  },
+  "dependencies": {
+    "@eggjs/core": "^6.2.13"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.17.3",
+    "@eggjs/bin": "7",
+    "@eggjs/mock": "^6.0.5",
+    "@eggjs/tsconfig": "1",
+    "@types/mocha": "10",
+    "@types/node": "22",
+    "egg": "^4.0.5",
+    "egg-logger": "^3.6.1",
+    "eslint": "8",
+    "eslint-config-egg": "14",
+    "glob": "^11.0.1",
+    "rimraf": "6",
+    "snap-shot-it": "^7.9.10",
+    "supertest": "^6.3.3",
+    "tsd": "^0.31.2",
+    "tshy": "3",
+    "tshy-after": "1",
+    "typescript": "5"
+  },
+  "scripts": {
+    "lint": "eslint --cache src test --ext .ts",
+    "pretest": "npm run clean && npm run lint -- --fix",
+    "test": "egg-bin test",
+    "preci": "npm run clean &&  npm run lint",
+    "ci": "egg-bin cov",
+    "postci": "npm run prepublishOnly && npm run clean",
+    "clean": "rimraf dist",
+    "prepublishOnly": "tshy && tshy-after && attw --pack"
+  },
+  "type": "module",
+  "tshy": {
+    "exports": {
+      ".": "./src/index.ts",
+      "./package.json": "./package.json"
+    }
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/index.d.ts",
+        "default": "./dist/commonjs/index.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "types": "./dist/commonjs/index.d.ts",
+  "main": "./dist/commonjs/index.js",
+  "module": "./dist/esm/index.js"
 }
